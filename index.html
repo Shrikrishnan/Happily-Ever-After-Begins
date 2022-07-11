@@ -68,6 +68,7 @@
                 <div class="section border-bottom-class">
                     <div id="demo" class="text"></div>
                 </div>
+                <!-- 
                 <div class="section border-bottom-class">
                     <div id="days" class="text days-color"></div>
                 </div>
@@ -80,6 +81,7 @@
                 <div class="section">
                     <div id="seconds" class="text seconds-color"></div>
                 </div>
+                -->
             </div>
 
         <script>
@@ -107,10 +109,10 @@
 
                 // Display the result in the element with id="demo"
                 document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-                documet.getElementById("days").innerHTML = days + "d";
-                document.getElementById("hours").innerHTML = Math.floor((distance / (1000 * 60 * 60))) + " h";
-                document.getElementById("minutes").innerHTML = Math.floor((distance / (1000 * 60))) + " m";
-                document.getElementById("seconds").innerHTML = Math.floor((distance / 1000)) + " s";
+                //documet.getElementById("days").innerHTML = days + "d";
+               // document.getElementById("hours").innerHTML = Math.floor((distance / (1000 * 60 * 60))) + " h";
+                //document.getElementById("minutes").innerHTML = Math.floor((distance / (1000 * 60))) + " m";
+                //document.getElementById("seconds").innerHTML = Math.floor((distance / 1000)) + " s";
 
                 // If the count down is finished, write some text
                 if (distance < 0) {
