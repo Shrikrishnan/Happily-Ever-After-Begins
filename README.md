@@ -1,3 +1,6 @@
 # Shri Marriage
-Creating an Timmer For My Marriage 
-https://shrikrishnan.github.io/countdown/
+Creating an Simple Timmer For My Marriage . 
+--- 
+## Timmer Link :link:  https://shrikrishnan.github.io/CountDown/
+---
+Made with :heart: by Shrikrishnan Balakrishnan
