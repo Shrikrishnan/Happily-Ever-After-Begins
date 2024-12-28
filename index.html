@@ -29,25 +29,18 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .countdown {
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Countdown to Shrikrishnan's Wedding</h1>
         <div id="countdown" class="text"></div>
-        <div id="daysPassed" class="text"></div>
     </div>
     <script>
         // Set the date we're counting down to
-        var countDownDate = new Date("Sep 07, 2024 06:08:00").getTime();
-        
-        // Set the wedding date for calculating days passed
-        var weddingDate = new Date("Sep 07, 2024 06:08:00").getTime();
+        var countDownDate = new Date("Sep 07, 2022 06:08:00").getTime();
 
-        // Update the countdown every 1 second
+        // Update the countdown every 1 millisecond (to show nanoseconds)
         var x = setInterval(function () {
             // Get today's date and time
             var now = new Date().getTime();
@@ -55,26 +48,21 @@
             // Find the distance between now and the countdown date
             var distance = countDownDate - now;
 
-            // Time calculations for days, hours, minutes, and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            // Time calculations for hours, minutes, seconds, and nanoseconds
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            var nanoseconds = distance % 1000;
 
-            // Display the countdown result
+            // Display the result in the element with id="countdown"
             if (distance > 0) {
-                document.getElementById("countdown").innerHTML = 
-                    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                document.getElementById("countdown").innerHTML =
+                    hours + ":" + minutes + ":" + seconds + ":" + nanoseconds;
             } else {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "The Big Day Has Arrived!";
             }
-
-            // Calculate and display how many days have passed since the wedding
-            var daysPassed = Math.floor((now - weddingDate) / (1000 * 60 * 60 * 24));
-            document.getElementById("daysPassed").innerHTML = "Days since the wedding: " + daysPassed + " days";
-
-        }, 1000);
+        }, 1); // Update every millisecond for nanoseconds precision
     </script>
 </body>
 </html>
