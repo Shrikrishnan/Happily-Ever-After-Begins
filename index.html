@@ -37,11 +37,15 @@
 <body>
     <div class="container">
         <h1>Countdown to Shrikrishnan's Wedding</h1>
-        <div id="demo" class="text"></div>
+        <div id="countdown" class="text"></div>
+        <div id="daysPassed" class="text"></div>
     </div>
     <script>
         // Set the date we're counting down to
         var countDownDate = new Date("Sep 07, 2024 06:08:00").getTime();
+        
+        // Set the wedding date for calculating days passed
+        var weddingDate = new Date("Sep 07, 2024 06:08:00").getTime();
 
         // Update the countdown every 1 second
         var x = setInterval(function () {
@@ -57,14 +61,19 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Display the result in the element with id="demo"
+            // Display the countdown result
             if (distance > 0) {
-                document.getElementById("demo").innerHTML = 
+                document.getElementById("countdown").innerHTML = 
                     days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             } else {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "The Big Day Has Arrived!";
+                document.getElementById("countdown").innerHTML = "The Big Day Has Arrived!";
             }
+
+            // Calculate and display how many days have passed since the wedding
+            var daysPassed = Math.floor((now - weddingDate) / (1000 * 60 * 60 * 24));
+            document.getElementById("daysPassed").innerHTML = "Days since the wedding: " + daysPassed + " days";
+
         }, 1000);
     </script>
 </body>
