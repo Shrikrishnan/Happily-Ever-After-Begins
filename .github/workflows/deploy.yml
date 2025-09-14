@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages   # Required for GitHub Pages
+      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       pages: write      # Required for GitHub Pages
       id-token: write   # Required for OIDC authentication
